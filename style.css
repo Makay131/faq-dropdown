@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  background-color: #f0f0f0;
+  overflow: scroll;
+}
+
+h1 {
+  margin: 50px 0 30px 0;
+  text-align: center;
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq {
+  background-color: transparent;
+  border: 1px solid #9ca0a3;
+  margin: 20px 0;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  transition: height 0.4s ease;
+  height: 140px;
+}
+
+.faq.active {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease-in-out;
+  height: 300px;
+}
+
+.faq.active::before,
+.faq.active::after {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  color: #a0dfb9;
+  font-size: 7rem;
+  position: absolute;
+  opacity: 0.2;
+  top: 10px;
+  left: 29px;
+  z-index: 0;
+}
+
+.faq.active::before {
+  color: #74b7e4;
+  top: -10px;
+  left: -10px;
+  transform: rotateY(180deg);
+}
+
+.faq-title {
+  margin-right: 30px;
+}
+
+.faq-text {
+  margin-top: 30px;
+  display: none;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.faq-toggle:focus {
+  outline: none;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+  display: block;
+  color: #fff;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: #aeb5b9;
+}
